@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Special Offer - Free 499rs</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #6e8efb, #a777e3);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      color: #fff;
+    }
+
+    .container {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 50px 40px;
+      max-width: 400px;
+      width: 90%;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+      color: #1e293b;
+      text-align: center;
+      position: relative;
+    }
+
+    .countdown {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #ff1a1a;
+      margin-bottom: 10px;
+      animation: zoomInOut 2s infinite;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-top: 0;
+      margin-bottom: 10px;
+      color: #5c3d99;
+      font-weight: 700;
+      letter-spacing: 2px;
+    }
+
+    p.offer-text {
+      font-size: 1.3rem;
+      margin-bottom: 35px;
+      color: #7c3aed;
+      font-weight: 600;
+    }
+
+    a.btn-get-now {
+      background: linear-gradient(90deg, #ff4136, #ff1a1a);
+      color: #fff;
+      padding: 18px 50px;
+      font-size: 1.3rem;
+      font-weight: 700;
+      text-decoration: none;
+      border-radius: 40px;
+      box-shadow: 0 10px 30px rgba(255, 26, 26, 0.6);
+      display: inline-block;
+      user-select: none;
+      animation: zoomInOut 2s infinite;
+      transition: box-shadow 0.35s ease;
+      cursor: pointer;
+    }
+
+    a.btn-get-now:hover {
+      box-shadow: 0 14px 40px rgba(255, 26, 26, 0.9);
+    }
+
+    @keyframes zoomInOut {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+    }
+
+    .badges {
+      margin-top: 40px;
+      display: flex;
+      justify-content: center;
+      gap: 18px;
+      flex-wrap: nowrap;
+    }
+
+    .badge {
+      background: #e0d7ff;
+      border-radius: 12px;
+      padding: 12px 20px;
+      box-shadow: 0 5px 12px rgba(124, 80, 255, 0.3);
+      color: #5c3d99;
+      font-weight: 600;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .badge svg {
+      width: 18px;
+      height: 18px;
+      fill: #7c3aed;
+    }
+  </style>
+</head>
+<body>
+  <div class="container" role="main" aria-label="Special offer">
+    <div class="countdown" aria-live="polite" aria-atomic="true" id="countdownTimer"></div>
+    <h1>Free 499rs</h1>
+    <p class="offer-text"> Get it Now ! पर दबाए और पे 499 का मुफ्त बोनस !👇👇</p>
+    <a href="https://indianwin77.site/#/register?invitationCode=8040862259035" class="btn-get-now" target="_blank" rel="noopener noreferrer" role="button" aria-label="Click to get the offer" id="getNowBtn">Get Now</a>
+    <div class="badges" aria-label="Trust badges">
+      <div class="badge" title="Secure Payment">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zM10 14l-2-2l1.41-1.41L10 11.17l4.59-4.59L16 8l-6 6z"/>
+        </svg>
+        Secure Payment
+      </div>
+      <div class="badge" title="Verified">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M12 2L5 6v6a7 7 0 005 6.32V22h4v-3.68A7 7 0 0019 12V6l-7-4zM10 14l-2-2l1.41-1.41L10 11.17l4.59-4.59L16 8l-6 6z"/>
+        </svg>
+        Verified
+      </div>
+      <div class="badge" title="Trusted Brand">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M12 2C8 2 4 5 4 9c0 3.28 2.5 6.308 6 6.92V21l2-1.5 2 1.5v-5.08c3.5-.612 6-3.64 6-6.92 0-4-4-7-8-7z"/>
+        </svg>
+        Trusted Brand
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const countdownElement = document.getElementById('countdownTimer');
+    const timerDuration = 5 * 60 * 1000; // 5 minutes
+
+    function startCountdown() {
+      let startTime = Date.now();
+      const updateTimer = () => {
+        const now = Date.now();
+        let elapsed = now - startTime;
+        let remaining = timerDuration - elapsed;
+
+        if (remaining <= 0) {
+          countdownElement.textContent = "Offer expired In!";
+          clearInterval(timerInterval);
+          return;
+        }
+
+        const minutes = Math.floor(remaining / 60000);
+        const seconds = Math.floor((remaining % 60000) / 1000);
+        countdownElement.textContent = `Offer expires in ${minutes}:${seconds.toString().padStart(2, '0')}`;
+      };
+
+      updateTimer();
+      var timerInterval = setInterval(updateTimer, 1000);
+    }
+
+    // Start countdown on page load or refresh
+    startCountdown();
+  </script>
+</body>
+</html>
